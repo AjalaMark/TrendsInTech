@@ -17,7 +17,7 @@ const Header = styled.header`
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
-  height: 400px;
+  height: 500px;
   align-items: center;
   justify-content: center;
   margin-bottom: 40px;
@@ -26,7 +26,11 @@ const Header = styled.header`
   &::after {
     content: "";
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.7)
+    );
     width: 100%;
     height: 100%;
     z-index: 8;
