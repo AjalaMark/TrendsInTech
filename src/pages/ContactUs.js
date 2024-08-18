@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../Assets/Contact.css";
 
 function ContactUs() {
   const [formData, setFormData] = useState({
@@ -26,51 +27,56 @@ function ContactUs() {
   };
 
   return (
-    <div className="contact-us">
-      <h2>Contact Us</h2>
-      <p>
-        If you have any questions or feedback, please reach out to us using the
-        form below.
-      </p>
-      {loading && <div className="loading-spinner"></div>}
-      {submitted && !loading && (
-        <p className="success-message">
-          Thank you for contacting us! We will get back to you shortly.
+    <div className="contact">
+      <header>
+        <h1>Contact</h1>
+      </header>
+      <div className="contact-us">
+        <h2>Contact Us</h2>
+        <p>
+          If you have any questions or feedback, please reach out to us using
+          the form below.
         </p>
-      )}
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
+        {loading && <div className="loading-spinner"></div>}
+        {submitted && !loading && (
+          <p className="success-message">
+            Thank you for contacting us! We will get back to you shortly.
+          </p>
+        )}
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
 
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
 
-        <label htmlFor="message">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="4"
-          value={formData.message}
-          onChange={handleChange}
-          required
-        ></textarea>
+          <label htmlFor="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
 
-        <button type="submit">Send</button>
-      </form>
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </div>
   );
 }

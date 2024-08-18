@@ -204,17 +204,20 @@ const Blog = () => {
   }
 
   return (
-    <div className="blog-post-page">
-      <h1>{post.title}</h1>
-      <p>{post.date}</p>
-      <div className="content">
-        <p>{post.content}</p>
+    <div className="blog">
+      <header className="blog-header">
+        <h1>Blog Post</h1>
+      </header>
+      <div className="blog-post-page">
+        <h1 className="post-title">{post.title}</h1>
+        <p className="post-date">{post.date}</p>
+        <div className="content">
+          <p>{post.content}</p>
+        </div>
+        <button onClick={() => navigate(-1)} className="back-button">
+          Back to Home
+        </button>
       </div>
-      <button onClick={() => navigate(-1)} className="back-button">
-        {" "}
-        {/* Back button */}
-        Back to Home
-      </button>
     </div>
   );
 };
